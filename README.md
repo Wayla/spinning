@@ -40,6 +40,16 @@ Set fade-out duration to `ms`. Defaults to `300`.
 See [spinner-browserify](https://github.com/juliangruber/spinner-browserify)
 for the rest of the api.
 
+## Installation
+
+With [npm](http://npmjs.org) do
+
+```bash
+$ npm install spinning
+```
+
+Then bundle for the client using [browserify](http://browserify.org/).
+
 ## License
 
 Copyright (c) 2013 Julian Gruber &lt;julian@wayla.com&gt;
