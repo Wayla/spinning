@@ -1,9 +1,10 @@
-
 # spinning
 
 Fullscreen spinner overlay.
 
 ![screenshot](http://i.cloudup.com/nvmiUQm74x.png)
+
+## [Try it out in requirebin!](http://requirebin.com/?gist=5940808)
 
 ## Usage
 
