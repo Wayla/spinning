@@ -3,7 +3,7 @@ var Spinning = require('../..');
 
   var spinner = Spinning().text('loading...').light().size(150);
   setTimeout(function () {
-//    spinner.remove();
+    spinner.remove();
   }, 2000);
 
 },{"../..":2}],3:[function(require,module,exports){
@@ -716,7 +716,7 @@ Spinner.prototype.draw = function(ctx){
 };
 
 
-},{"autoscale-canvas":12,"raf-component":13}],11:[function(require,module,exports){
+},{"raf-component":12,"autoscale-canvas":13}],11:[function(require,module,exports){
 /**
  * Supported prefixes.
  */
@@ -764,6 +764,23 @@ prefixed.get = function (style, attribute) {
 
 },{}],12:[function(require,module,exports){
 
+module.exports = window.requestAnimationFrame
+  || window.webkitRequestAnimationFrame
+  || window.mozRequestAnimationFrame
+  || window.oRequestAnimationFrame
+  || window.msRequestAnimationFrame
+  || fallback;
+
+var prev = new Date().getTime();
+function fallback(fn) {
+  var curr = new Date().getTime();
+  var ms = Math.max(0, 16 - (curr - prev));
+  setTimeout(fn, ms);
+  prev = curr;
+}
+
+},{}],13:[function(require,module,exports){
+
 /**
  * Retina-enable the given `canvas`.
  *
@@ -784,22 +801,5 @@ module.exports = function(canvas){
   }
   return canvas;
 };
-},{}],13:[function(require,module,exports){
-
-module.exports = window.requestAnimationFrame
-  || window.webkitRequestAnimationFrame
-  || window.mozRequestAnimationFrame
-  || window.oRequestAnimationFrame
-  || window.msRequestAnimationFrame
-  || fallback;
-
-var prev = new Date().getTime();
-function fallback(fn) {
-  var curr = new Date().getTime();
-  var ms = Math.max(0, 16 - (curr - prev));
-  setTimeout(fn, ms);
-  prev = curr;
-}
-
 },{}]},{},[1])
 ;
