@@ -1,0 +1,29 @@
+{
+  "name": "spinning",
+  "description": "Fullscreen spinner overlay",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Wayla/spinning.git"
+  },
+  "homepage": "https://github.com/Wayla/spinning",
+  "main": "index.js",
+  "dependencies": {
+    "insert-css": "0.0.0",
+    "fade": "0.0.0",
+    "spinner-browserify": "~0.1.0"
+  },
+  "keywords": [
+    "spin",
+    "spinning",
+    "loading",
+    "fullscreen",
+    "overlay"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "julian@wayla.com",
+    "url": "http://wayla.com"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,1 @@
+module.exports = '.spinner, .overlay {\n  position: fixed;\n  opacity: 0;\n}\n\n.spinner {\n  left: 50%;\n  top: 50%;\n  margin-left: -100px;\n  margin-top: -100px;\n  z-index: 2222222222;\n}\n\n.overlay {\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  z-index: 1111111111;\n}\n';
