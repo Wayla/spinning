@@ -3,6 +3,7 @@ var insertCss = require('insert-css');
 var style = require('./style');
 var fade = require('fade');
 var process = require('process'); // be nice to browserify
+var ready = require('domready');
 
 module.exports = Spin;
 
@@ -12,14 +13,24 @@ function Spin () {
   // durations
   var fadeIn = 1000;
   var fadeOut = 300;
+  var removed = false;
+  var inserted = false;
+
+  function insert (el) {
+    ready(function () {
+      if (removed) return;
+      document.body.appendChild(el);
+      inserted = true;
+    })
+  }
 
   var overlay = document.createElement('div');
   overlay.className = 'overlay';
-  document.body.appendChild(overlay);
+  insert(overlay);
 
   var spinner = new Spinner();
   spinner.el.className = 'spinner';
-  document.body.appendChild(spinner.el);
+  insert(spinner.el);
 
   process.nextTick(function () {
     fade(overlay, 0.8, fadeIn);
@@ -29,11 +40,14 @@ function Spin () {
   spinner.remove = function () {
     fade.out(overlay, fadeOut);
     fade.out(spinner.el, fadeOut);
+    removed = true;
 
     setTimeout(function () {
       spinner.stop();
-      document.body.removeChild(overlay);
-      document.body.removeChild(spinner.el);
+      if (inserted) {
+        document.body.removeChild(overlay);
+        document.body.removeChild(spinner.el);
+      }
     }, fadeOut);
   };
 
