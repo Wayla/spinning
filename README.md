@@ -22,7 +22,8 @@ setTimeout(function () {
 
 ### Spinning()
 
-Create a new fullscreen spinner overlay and attach it to the `<body>`.
+Create a new fullscreen spinner overlay and attach it to `<body>` when it's
+loaded.
 
 ### Spinning#remove()
 
