@@ -11,7 +11,8 @@
   "dependencies": {
     "insert-css": "0.0.0",
     "fade": "0.0.0",
-    "spinner-browserify": "~0.1.0"
+    "spinner-browserify": "~0.1.0",
+    "domready": "~0.2.12"
   },
   "keywords": [
     "spin",
