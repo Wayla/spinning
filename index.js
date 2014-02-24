@@ -2,7 +2,6 @@ var Spinner = require('spinner-browserify');
 var insertCss = require('insert-css');
 var style = require('./style');
 var fade = require('fade');
-var process = require('process'); // be nice to browserify
 var ready = require('domready');
 
 module.exports = Spin;
